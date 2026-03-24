@@ -1,0 +1,14 @@
+# Secrets - never commit
+.env
+*.db
+instance/
+
+# Python
+__pycache__/
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/

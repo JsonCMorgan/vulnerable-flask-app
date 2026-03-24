@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Users</title>
+</head>
+<body>
+    <h1>Search Users</h1>
+    <nav>
+        <a href="/">Home</a> | <a href="/search">Search Users</a>
+    </nav>
+
+    <form method="get" action="/search">
+        <input type="text" name="q" value="{{ query }}" placeholder="Search by username">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+    <h2>Results:</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        {% for r in results %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.username }}</td>
+            <td>{{ r.password }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif query %}
+    <p>No results for "{{ query }}"</p>
+    {% endif %}
+</body>
+</html>
