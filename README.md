@@ -1,6 +1,10 @@
 # Vulnerable Flask App — AppSec Learning Project
 
+> **Current branch: `vulnerable`** — Intentionally insecure (SQLi, XSS, debug on). Use only on localhost. Switch to **`main`** for the patched baseline and passing tests.
+
 A deliberately insecure Python Flask web application built for learning Application Security. The **`main`** branch is the **patched, localhost-safe** baseline; the **`vulnerable`** branch keeps exploitable patterns for hands-on practice.
+
+**Note:** `pytest` asserts patched behavior from `main`. On `vulnerable`, tests are expected to fail — compare with `git diff main..vulnerable` instead of chasing green CI here.
 
 ## Purpose
 
