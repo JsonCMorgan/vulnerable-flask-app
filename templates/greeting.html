@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+</head>
+<body>
+    <h1>Greeting</h1>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/search">Search Users</a> |
+        <a href="/greeting">Greeting</a>
+    </nav>
+
+    <!-- PATCHED (main): default Jinja2 escaping — HTML/script in `name` is shown as text, not executed -->
+    <p>Hello, <span id="name">{{ name }}</span>!</p>
+
+    <p><small>Try <code>?name=Alice</code>. On the <code>vulnerable</code> branch, <code>|safe</code> would allow script payloads (Phase 2).</small></p>
+</body>
+</html>
